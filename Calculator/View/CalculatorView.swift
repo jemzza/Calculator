@@ -10,29 +10,9 @@ import SwiftUI
 
 struct CalculatorView: View {
     
-    let buttons: [[CalculatorButtonModel]] = [
-        [.init(title: "AC", color: .lightGray),
-         .init(title: "±", color: .lightGray),
-         .init(title: "%", color: .lightGray),
-         .init(title: "÷", color: Color.orange)],
-        [.init(title: "7"),
-         .init(title: "8"),
-         .init(title: "9"),
-         .init(title: "x", color: Color.orange)],
-        [.init(title: "4"),
-         .init(title: "5"),
-         .init(title: "6"),
-         .init(title: "-", color: Color.orange) ],
-        [.init(title: "1"),
-         .init(title: "2"),
-         .init(title: "3"),
-         .init(title: "+", color: Color.orange)],
-        [.init(title: "0"),
-        .init(title: "."),
-        .init(title: "=", color: Color.orange)]
-    ]
-    
+    let buttons = CalculatorData().buttons
     let spacing: CGFloat = 12
+    
     @ObservedObject var calculatorVM = CalculatorViewModel()
     
     var body: some View {
@@ -48,7 +28,6 @@ struct CalculatorView: View {
                             .font(.system(size: 74))
                             .multilineTextAlignment(.trailing)
                     }.padding(.horizontal, self.spacing)
-                    
                     ForEach(self.buttons, id: \.self) { row in
                         CalculatorButtonsRow(screenWidth: geometry.size.width, spacing: self.spacing, buttons: row, pressedOperator: self.calculatorVM.pressedOperator, didTapButton: { calcButton in
                             self.calculatorVM.receiveButtonPress(button: calcButton)
