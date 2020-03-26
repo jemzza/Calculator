@@ -7,28 +7,29 @@
 //
 
 import XCTest
+import SwiftUI
+import ViewInspector
+
 @testable import Calculator
 
-class CalculatorTests: XCTestCase {
+extension CalculatorView: Inspectable {  }
 
-    override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+extension CalculatorButtonsRow: Inspectable {  }
+
+final class CalculatorTests: XCTestCase {
+
+    func test_initial_value_into_display() throws {
+        let view = CalculatorView()
+        let string = try view.inspect().geometryReader().zStack().vStack(1).hStack(1).text(1).string()
+        XCTAssertEqual(string, "0")
     }
-
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-    }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    
+    func test_initial_value_into_button_AC() throws {
+            let view = CalculatorView()
+        let string = try view.inspect().geometryReader().zStack().vStack(1).forEach(2).view(CalculatorButtonsRow.self, 0).hStack().forEach(0).button(0).text().string()
+            XCTAssertEqual(string, "AC")
+//            XCTAssertNotNil(string, "Did not find body")
+            
         }
-    }
 
 }

@@ -3,13 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A277D64C242D018900FEFFA6 /* CalculatorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277D64B242D018900FEFFA6 /* CalculatorViewModel.swift */; };
+		A277D64E242D01B100FEFFA6 /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277D64D242D01B100FEFFA6 /* CalculatorView.swift */; };
+		A277D654242D01FD00FEFFA6 /* CalculatorButtonsRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277D653242D01FD00FEFFA6 /* CalculatorButtonsRow.swift */; };
+		A277D656242D021500FEFFA6 /* CalculatorButtonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277D655242D021500FEFFA6 /* CalculatorButtonModel.swift */; };
+		A277D658242D0EDC00FEFFA6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277D657242D0EDC00FEFFA6 /* Extensions.swift */; };
+		A277D65E242D130B00FEFFA6 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = A277D65D242D130B00FEFFA6 /* ViewInspector */; };
 		A2BA8E30242B55FC00B0902A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BA8E2F242B55FC00B0902A /* AppDelegate.swift */; };
 		A2BA8E32242B55FC00B0902A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BA8E31242B55FC00B0902A /* SceneDelegate.swift */; };
-		A2BA8E34242B55FC00B0902A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BA8E33242B55FC00B0902A /* ContentView.swift */; };
 		A2BA8E36242B560000B0902A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2BA8E35242B560000B0902A /* Assets.xcassets */; };
 		A2BA8E39242B560000B0902A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2BA8E38242B560000B0902A /* Preview Assets.xcassets */; };
 		A2BA8E3C242B560000B0902A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2BA8E3A242B560000B0902A /* LaunchScreen.storyboard */; };
@@ -35,10 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A277D64B242D018900FEFFA6 /* CalculatorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModel.swift; sourceTree = "<group>"; };
+		A277D64D242D01B100FEFFA6 /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
+		A277D653242D01FD00FEFFA6 /* CalculatorButtonsRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonsRow.swift; sourceTree = "<group>"; };
+		A277D655242D021500FEFFA6 /* CalculatorButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonModel.swift; sourceTree = "<group>"; };
+		A277D657242D0EDC00FEFFA6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A2BA8E2C242B55FC00B0902A /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2BA8E2F242B55FC00B0902A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2BA8E31242B55FC00B0902A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A2BA8E33242B55FC00B0902A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A2BA8E35242B560000B0902A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A2BA8E38242B560000B0902A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A2BA8E3B242B560000B0902A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -63,6 +72,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A277D65E242D130B00FEFFA6 /* ViewInspector in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +86,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A277D647242D00CC00FEFFA6 /* Supporting files */ = {
+			isa = PBXGroup;
+			children = (
+				A277D657242D0EDC00FEFFA6 /* Extensions.swift */,
+				A2BA8E2F242B55FC00B0902A /* AppDelegate.swift */,
+				A2BA8E31242B55FC00B0902A /* SceneDelegate.swift */,
+				A2BA8E35242B560000B0902A /* Assets.xcassets */,
+				A2BA8E3A242B560000B0902A /* LaunchScreen.storyboard */,
+			);
+			path = "Supporting files";
+			sourceTree = "<group>";
+		};
+		A277D648242D014700FEFFA6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A277D64B242D018900FEFFA6 /* CalculatorViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A277D649242D015300FEFFA6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A277D64D242D01B100FEFFA6 /* CalculatorView.swift */,
+				A277D653242D01FD00FEFFA6 /* CalculatorButtonsRow.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A277D64A242D015900FEFFA6 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A277D655242D021500FEFFA6 /* CalculatorButtonModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		A2BA8E23242B55FC00B0902A = {
 			isa = PBXGroup;
 			children = (
@@ -99,11 +146,10 @@
 		A2BA8E2E242B55FC00B0902A /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				A2BA8E2F242B55FC00B0902A /* AppDelegate.swift */,
-				A2BA8E31242B55FC00B0902A /* SceneDelegate.swift */,
-				A2BA8E33242B55FC00B0902A /* ContentView.swift */,
-				A2BA8E35242B560000B0902A /* Assets.xcassets */,
-				A2BA8E3A242B560000B0902A /* LaunchScreen.storyboard */,
+				A277D64A242D015900FEFFA6 /* Model */,
+				A277D649242D015300FEFFA6 /* View */,
+				A277D648242D014700FEFFA6 /* ViewModel */,
+				A277D647242D00CC00FEFFA6 /* Supporting files */,
 				A2BA8E3D242B560000B0902A /* Info.plist */,
 				A2BA8E37242B560000B0902A /* Preview Content */,
 			);
@@ -152,6 +198,8 @@
 			dependencies = (
 			);
 			name = Calculator;
+			packageProductDependencies = (
+			);
 			productName = Calculator;
 			productReference = A2BA8E2C242B55FC00B0902A /* Calculator.app */;
 			productType = "com.apple.product-type.application";
@@ -170,6 +218,9 @@
 				A2BA8E44242B560000B0902A /* PBXTargetDependency */,
 			);
 			name = CalculatorTests;
+			packageProductDependencies = (
+				A277D65D242D130B00FEFFA6 /* ViewInspector */,
+			);
 			productName = CalculatorTests;
 			productReference = A2BA8E42242B560000B0902A /* CalculatorTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -224,6 +275,9 @@
 				Base,
 			);
 			mainGroup = A2BA8E23242B55FC00B0902A;
+			packageReferences = (
+				A277D65C242D130B00FEFFA6 /* XCRemoteSwiftPackageReference "ViewInspector" */,
+			);
 			productRefGroup = A2BA8E2D242B55FC00B0902A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -267,9 +321,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A277D654242D01FD00FEFFA6 /* CalculatorButtonsRow.swift in Sources */,
+				A277D64E242D01B100FEFFA6 /* CalculatorView.swift in Sources */,
 				A2BA8E30242B55FC00B0902A /* AppDelegate.swift in Sources */,
+				A277D656242D021500FEFFA6 /* CalculatorButtonModel.swift in Sources */,
+				A277D64C242D018900FEFFA6 /* CalculatorViewModel.swift in Sources */,
 				A2BA8E32242B55FC00B0902A /* SceneDelegate.swift in Sources */,
-				A2BA8E34242B55FC00B0902A /* ContentView.swift in Sources */,
+				A277D658242D0EDC00FEFFA6 /* Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -594,6 +652,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A277D65C242D130B00FEFFA6 /* XCRemoteSwiftPackageReference "ViewInspector" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nalexn/ViewInspector";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A277D65D242D130B00FEFFA6 /* ViewInspector */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A277D65C242D130B00FEFFA6 /* XCRemoteSwiftPackageReference "ViewInspector" */;
+			productName = ViewInspector;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A2BA8E24242B55FC00B0902A /* Project object */;
 }
