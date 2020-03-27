@@ -21,6 +21,7 @@ final class CalculatorUnitTests: XCTestCase {
   
   let view = CalculatorView()
   
+  // MARK: -  Values in buttons
   func test_initial_value_into_display() throws {
     let display = try view.inspect().geometryReader().zStack().vStack(1).hStack(1).text(1).string()
     XCTAssertEqual(display, "0")
@@ -127,30 +128,239 @@ final class CalculatorUnitTests: XCTestCase {
   let calculatorVM = CalculatorViewModel()
 //  let buttons = CalculatorData().buttons
   
-  func test_AC_behavior_by_firstExpression() throws {
+  //MARK: - checked AC
+  
+  func test_AC_behavior_by_firstExpression() {
     calculatorVM.firstExpression = "3"
     _ = calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "AC"))
     XCTAssertEqual(calculatorVM.firstExpression, "")
   }
   
-  func test_AC_behavior_by_secondExpression() throws {
+  func test_AC_behavior_by_secondExpression() {
     calculatorVM.secondExpression = "109"
     _ = calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "AC"))
     XCTAssertEqual(calculatorVM.secondExpression, "")
   }
   
-  func test_AC_behavior_by_pressedOperator() throws {
+  func test_AC_behavior_by_pressedOperator() {
     calculatorVM.secondExpression = "+"
     _ = calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "AC"))
     XCTAssertEqual(calculatorVM.pressedOperator, "")
   }
   
-  func test_AC_behavior_by_display() throws {
+  func test_AC_behavior_by_display() {
     calculatorVM.display = "123.8"
     _ = calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "AC"))
     XCTAssertEqual(calculatorVM.display, "0")
   }
   
+  //MARK: - checked pressedOperator
+  
+  func test_plus_value_pressedOperator() {
+    _ = calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "+"))
+    XCTAssertEqual(calculatorVM.pressedOperator, "+")
+  }
+  
+  func test_multiply_value_pressedOperator() {
+    _ = calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "x"))
+    XCTAssertEqual(calculatorVM.pressedOperator, "x")
+  }
+  
+  func test_minus_value_pressedOperator() {
+    _ = calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "-"))
+    XCTAssertEqual(calculatorVM.pressedOperator, "-")
+  }
+  
+  func test_divide_value_pressedOperator() {
+    _ = calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "÷"))
+    XCTAssertEqual(calculatorVM.pressedOperator, "÷")
+  }
+  
+  // MARK: - y + x = ...
+  func test_equals_behavior_by_plus_Int()  {
+    calculatorVM.firstExpression = "3"
+    calculatorVM.pressedOperator = "+"
+    calculatorVM.display = "3"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "6")
+  }
+  
+  func test_equals_behavior_by_plus_Double_integer()  {
+    calculatorVM.firstExpression = "3.0"
+    calculatorVM.pressedOperator = "+"
+    calculatorVM.display = "3.0"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "6")
+  }
+  
+  func test_equals_behavior_by_plus_Double()  {
+    calculatorVM.firstExpression = "3.3"
+    calculatorVM.pressedOperator = "+"
+    calculatorVM.display = "3.4"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "6.7")
+  }
+  
+  func test_equals_behavior_by_plus_Double_sumInteger()  {
+    calculatorVM.firstExpression = "3.3"
+    calculatorVM.pressedOperator = "+"
+    calculatorVM.display = "3.7"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "7")
+  }
+  
+  func test_equals_behavior_by_plus_Int_less_zero()  {
+    calculatorVM.firstExpression = "-5"
+    calculatorVM.pressedOperator = "+"
+    calculatorVM.display = "2"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "-3")
+  }
+  
+  func test_equals_behavior_by_plus_Int_greater_zero()  {
+    calculatorVM.firstExpression = "-5"
+    calculatorVM.pressedOperator = "+"
+    calculatorVM.display = "10"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "5")
+  }
+  
+  // MARK: - y - x = ...
+  func test_equals_behavior_by_minus_Int()  {
+    calculatorVM.firstExpression = "4"
+    calculatorVM.pressedOperator = "-"
+    calculatorVM.display = "3"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "1")
+  }
+  
+  func test_equals_behavior_by_minus_Double_integer()  {
+    calculatorVM.firstExpression = "4.0"
+    calculatorVM.pressedOperator = "-"
+    calculatorVM.display = "2.0"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "2")
+  }
+  
+  func test_equals_behavior_by_minus_Double()  {
+    calculatorVM.firstExpression = "6.3"
+    calculatorVM.pressedOperator = "-"
+    calculatorVM.display = "3.4"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "2.9")
+  }
+  
+  func test_equals_behavior_by_minus_Double_sumInteger()  {
+    calculatorVM.firstExpression = "4.3"
+    calculatorVM.pressedOperator = "-"
+    calculatorVM.display = "3.3"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "1")
+  }
+  
+  // MARK: - y * x = ...
+  
+  func test_equals_behavior_by_multiply_Int()  {
+    calculatorVM.firstExpression = "4"
+    calculatorVM.pressedOperator = "x"
+    calculatorVM.display = "3"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "12")
+  }
+  
+  func test_equals_behavior_by_multiply_Double_integer()  {
+    calculatorVM.firstExpression = "4.0"
+    calculatorVM.pressedOperator = "x"
+    calculatorVM.display = "2.0"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "8")
+  }
+  
+  func test_equals_behavior_by_multiply_Double()  {
+    calculatorVM.firstExpression = "6.3"
+    calculatorVM.pressedOperator = "x"
+    calculatorVM.display = "2.4"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "15.12")
+  }
+  
+  func test_equals_behavior_by_multiply_Double_multiplyInteger()  {
+    calculatorVM.firstExpression = "4.5"
+    calculatorVM.pressedOperator = "x"
+    calculatorVM.display = "10"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "45")
+  }
+  
+  // MARK: - y / x = ...
+  
+  func test_equals_behavior_by_divide_Int()  {
+    calculatorVM.firstExpression = "8"
+    calculatorVM.pressedOperator = "÷"
+    calculatorVM.display = "4"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "2")
+  }
+  
+  func test_equals_behavior_by_divide_Double_integer()  {
+    calculatorVM.firstExpression = "4.0"
+    calculatorVM.pressedOperator = "÷"
+    calculatorVM.display = "2.0"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "2")
+  }
+  
+  func test_equals_behavior_by_divide_Double()  {
+    calculatorVM.firstExpression = "150.48"
+    calculatorVM.pressedOperator = "÷"
+    calculatorVM.display = "3.3"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "45.6")
+  }
+  
+  func test_equals_behavior_by_divide_Double_divideInteger()  {
+    calculatorVM.firstExpression = "4.2"
+    calculatorVM.pressedOperator = "÷"
+    calculatorVM.display = "2.1"
+
+    calculatorVM.receiveButtonPress(button: CalculatorButtonModel.init(title: "="))
+    
+    XCTAssertEqual(calculatorVM.display, "2")
+  }
   
 }
 
@@ -159,6 +369,7 @@ final class CalculatorUnitTests: XCTestCase {
 final class CalculatorUITests: XCTestCase {
   let view = CalculatorView()
   
+  // MARK: - Button double tapped
   func test_AC_button_double_tapped() throws {
     let button = try view.inspect().geometryReader().zStack().vStack(1).forEach(2).view(CalculatorButtonsRow.self, 0).hStack().forEach(0).button(0)
     try button.tap()
