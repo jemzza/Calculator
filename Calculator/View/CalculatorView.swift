@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct CalculatorView: View {
-    
     let buttons = CalculatorData().buttons
     let spacing: CGFloat = 12
     

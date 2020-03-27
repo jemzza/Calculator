@@ -9,7 +9,6 @@
 import SwiftUI
 
 class CalculatorViewModel: ObservableObject {
-    
     @Published var display = CalculatorViewModel.defaultDisplay
     @Published var pressedOperator = ""
     
