@@ -2,7 +2,7 @@
 
 A calculator app using SwiftUI
 
-<img width="25%" height="25%" src="screenShots/myScreenshotiPhone.png"/>
+<img width="25%" height="25%" src="images/myScreenshotiPhone.png"/>
 ![](images/myScreenshotiPhone.png)
 
 ## Requirements
