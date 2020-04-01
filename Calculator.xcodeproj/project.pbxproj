@@ -128,6 +128,7 @@
 		A2BA8E23242B55FC00B0902A = {
 			isa = PBXGroup;
 			children = (
+				A2827E792434E54D002813BC /* Readme.md */,
 				A2BA8E2E242B55FC00B0902A /* Calculator */,
 				A2BA8E45242B560000B0902A /* CalculatorTests */,
 				A2BA8E50242B560000B0902A /* CalculatorUITests */,
@@ -148,7 +149,6 @@
 		A2BA8E2E242B55FC00B0902A /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
-				A2827E792434E54D002813BC /* Readme.md */,
 				A277D64A242D015900FEFFA6 /* Model */,
 				A277D649242D015300FEFFA6 /* View */,
 				A277D648242D014700FEFFA6 /* ViewModel */,
