@@ -14,7 +14,7 @@
 		A277D658242D0EDC00FEFFA6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A277D657242D0EDC00FEFFA6 /* Extensions.swift */; };
 		A277D65E242D130B00FEFFA6 /* ViewInspector in Frameworks */ = {isa = PBXBuildFile; productRef = A277D65D242D130B00FEFFA6 /* ViewInspector */; };
 		A2827E7A2434E54D002813BC /* Readme.md in Resources */ = {isa = PBXBuildFile; fileRef = A2827E792434E54D002813BC /* Readme.md */; };
-		A2827E7D2434E9FD002813BC /* myScreenshotiPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A2827E7C2434E9FD002813BC /* myScreenshotiPhone.png */; };
+		A2827E802434EAC3002813BC /* myScreenshotiPhone.png in Resources */ = {isa = PBXBuildFile; fileRef = A2827E7F2434EAC3002813BC /* myScreenshotiPhone.png */; };
 		A2BA8E30242B55FC00B0902A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BA8E2F242B55FC00B0902A /* AppDelegate.swift */; };
 		A2BA8E32242B55FC00B0902A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BA8E31242B55FC00B0902A /* SceneDelegate.swift */; };
 		A2BA8E36242B560000B0902A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2BA8E35242B560000B0902A /* Assets.xcassets */; };
@@ -48,7 +48,7 @@
 		A277D655242D021500FEFFA6 /* CalculatorButtonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonModel.swift; sourceTree = "<group>"; };
 		A277D657242D0EDC00FEFFA6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A2827E792434E54D002813BC /* Readme.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
-		A2827E7C2434E9FD002813BC /* myScreenshotiPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = myScreenshotiPhone.png; sourceTree = "<group>"; };
+		A2827E7F2434EAC3002813BC /* myScreenshotiPhone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = myScreenshotiPhone.png; path = ../../../../../../Desktop/myScreenshotiPhone.png; sourceTree = "<group>"; };
 		A2BA8E2C242B55FC00B0902A /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2BA8E2F242B55FC00B0902A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2BA8E31242B55FC00B0902A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,10 +127,10 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A2827E7B2434E9FD002813BC /* screenShots */ = {
+		A2827E7E2434EAA1002813BC /* screenShots */ = {
 			isa = PBXGroup;
 			children = (
-				A2827E7C2434E9FD002813BC /* myScreenshotiPhone.png */,
+				A2827E7F2434EAC3002813BC /* myScreenshotiPhone.png */,
 			);
 			path = screenShots;
 			sourceTree = "<group>";
@@ -139,7 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				A2827E792434E54D002813BC /* Readme.md */,
-				A2827E7B2434E9FD002813BC /* screenShots */,
+				A2827E7E2434EAA1002813BC /* screenShots */,
 				A2BA8E2E242B55FC00B0902A /* Calculator */,
 				A2BA8E45242B560000B0902A /* CalculatorTests */,
 				A2BA8E50242B560000B0902A /* CalculatorUITests */,
@@ -311,7 +311,7 @@
 				A2BA8E3C242B560000B0902A /* LaunchScreen.storyboard in Resources */,
 				A2BA8E39242B560000B0902A /* Preview Assets.xcassets in Resources */,
 				A2827E7A2434E54D002813BC /* Readme.md in Resources */,
-				A2827E7D2434E9FD002813BC /* myScreenshotiPhone.png in Resources */,
+				A2827E802434EAC3002813BC /* myScreenshotiPhone.png in Resources */,
 				A2BA8E36242B560000B0902A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
