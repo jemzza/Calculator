@@ -125,18 +125,10 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A2827E812434EBFF002813BC /* images */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = images;
-			sourceTree = "<group>";
-		};
 		A2BA8E23242B55FC00B0902A = {
 			isa = PBXGroup;
 			children = (
 				A2827E792434E54D002813BC /* Readme.md */,
-				A2827E812434EBFF002813BC /* images */,
 				A2BA8E2E242B55FC00B0902A /* Calculator */,
 				A2BA8E45242B560000B0902A /* CalculatorTests */,
 				A2BA8E50242B560000B0902A /* CalculatorUITests */,
